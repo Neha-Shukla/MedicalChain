@@ -1,11 +1,21 @@
-import Footer from "./components/footer";
-import Header from "./components/header";
 
-export default function App() {
+import { Routes, Route } from 'react-router-dom';
+import Login from './components/pages/authentication/login';
+import Register from './components/pages/authentication/register';
+import Home from './components/pages/homepage';
+
+export default function Routing() {
     return (
         <div>
-            <Header />
-            <Footer />
+            <Routes>
+                <Route exact path='/' element={<Home />} />
+                <Route exact path='/login' element={<Login />} >
+                    <Route exact path=':role' element={<Login />} />
+                </Route>
+                <Route exact path='/register' element={<Register />} >
+                    <Route exact path=':role' element={<Register />} ></Route>
+                </Route>
+            </Routes>
         </div>
     )
 }

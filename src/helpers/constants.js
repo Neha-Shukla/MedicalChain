@@ -1,0 +1,1 @@
+export const supportedRoles = ["Hospital", "Patient", "Doctor", "Reception"]
